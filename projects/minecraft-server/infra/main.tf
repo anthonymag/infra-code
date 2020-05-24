@@ -3,7 +3,7 @@ terraform {
     encrypt = "true"
     bucket  = "tf-anthonymag"
     region  = "us-east-1"
-    key     = "minecraft-server/terraform.tfstate"
+    key     = "minecraft-server/infra/terraform.tfstate"
   }
 
   required_version = "~> 0.12"
@@ -28,7 +28,7 @@ provider "digitalocean" {
 }
 
 module "droplet" {
-  source = "../../digitalocean/droplet"
+  source = "../../../digitalocean/droplet"
 
-  droplet_name = "minecraft-server"
+  droplet_name = "minecraft-tonyland"
 }
